@@ -22,7 +22,8 @@ namespace GildedRoseTests
  NB: The final state of the code is commented out at the bottom. 
     Also the final state of this code is the starting state of the csharp-mutation-start branch.
 STEP 1 - get test passing
-    Replace foo() with UpdateQuality()
+    See it fail first, by running it
+    Rename it: Replace foo() with UpdateQuality()
     Change fixme to foo
     Run test and see it pass
 STEP 2 - get approvals working
