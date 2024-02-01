@@ -8,7 +8,6 @@ namespace GildedRoseTests
     {
         [Fact]
         public void foo()
-        // public void UpdateQuality()
         {
             IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
             GildedRose app = new GildedRose(Items);
