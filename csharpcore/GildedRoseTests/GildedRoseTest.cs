@@ -50,16 +50,22 @@ STEP 2 - get approvals working
         (will add this: using ApprovalTests.Reporters;)
     Run all tests: Should bring up diff reporter
         Might disappear straight after - use Cmd + ` to bring it back
-    SHOW NEW FILE: gildedRoseTest.UpdaeQuality.approved.txt
+    Look at the code in the test
+        Explain that it passes items to constructor
+        then calls UpdateQuality
+        then checks state of items after call - currently just checking item name
+    SHOW NEW FILE: gildedRoseTest.UpdateQuality.approved.txt
         Also click the eye icon, top left, to show the associated received.txt
+        Point out we're comparing received.txt with approved.txt
+    click >> to approve the output in the diff reporter
     Implement Item.ToString and call it in test instead of Name
         Approvals.Verify(Items[0].ToString());
         alt + cmd + / to uncomment code in Rider
     Run all tests - will bring up diff reporter again
-    Point out we're comparing received.txt with approved.txt
-    click >> to accept new content
+    click >> to approve the output in the diff reporter
     Run all tests again - should pass
 STEP 3 - get combination approvals working  
+    Explain I'm going to do this step by step and it will also demonstrate small steps
     Introduce `itemString` var for `Items[0].ToString()`
         Highlight `Items[0].ToString()`, then Cmd + Shift + R => Introduce variable            
         Will result in this:
@@ -92,7 +98,14 @@ STEP 3 - get combination approvals working
     Explain this means I've now created a useful method that can update quality according to passed in params
         - Show the method
         - (the reason it returns `Items[0]` is that `Items` was created in the test and only contains one item)
-    Replace ALL the existing code in the `UpdateQuality` test (5 lines) with a call to VerifyAllCombinations: 
+    Inline the three new vars at the top
+        - "foo", 0 and 0
+        - place the cursor on each var where it's passed to DoUpdateQuality
+            - (not on the actual var declarations)
+        - Cmd + R + I
+    Explain it's currently only verifying one item
+        - but because I've created the DoUpdateQuality method, I can now do the next step
+    Replace ALL the existing code in the `UpdateQuality` test (2 lines, or 5 if you didn't inline vars) with a call to VerifyAllCombinations: 
             CombinationApprovals.VerifyAllCombinations(
                 DoUpdateQuality,
                 new String[] { "foo" },
@@ -105,6 +118,7 @@ STEP 3 - get combination approvals working
     Alt Enter: Remove unused using directives
     Run tests again - approve the new output
         Using CombinationApprovals means you get input as well as output
+    Explain what the params to VerifyAllCombinations are and what it's doing
     Note that "foo" is useful data, because it acts as a default item name (rather than a special case)
 STEP 4 - start adding meaningful test data
     Start by running the tests WITH COVERAGE
@@ -112,6 +126,7 @@ STEP 4 - start adding meaningful test data
         You're interested in the GildedRose result under GildedRoseKata - ignore other numbers
         GildedRose is the GildedRose class, and if you expand you'll see the UpdateQuality method
          - this is what we care about
+        - The other numbers are other bits of the code, like the Item class and the GildedRose constructor
     Show GildedRose.cs and how you can see coverage feedback in the gutter on the left
     On each step, add the data to the call to `CombinationApprovals.VerifyAllCombinations`
     Then run the test, approve the new output and close the diff reporter
