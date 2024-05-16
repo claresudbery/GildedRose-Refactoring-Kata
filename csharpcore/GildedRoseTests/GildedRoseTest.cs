@@ -22,7 +22,7 @@ namespace GildedRoseTests
                     "Backstage passes to a TAFKAL80ETC concert", 
                     "Sulfuras, Hand of Ragnaros" },
                 // SellIn:
-                new int[] { -1, 0, 11 },
+                new int[] { -1, 0, 6, 11 },
                 // Quality:
                 new int[] { 0, 1, 49, 50 });
         }
