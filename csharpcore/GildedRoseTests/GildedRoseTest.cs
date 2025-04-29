@@ -2,7 +2,6 @@
 using Xunit;
 using System.Collections.Generic;
 using GildedRoseKata;
-using ApprovalTests;
 using ApprovalTests.Combinations;
 using ApprovalTests.Reporters;
 
