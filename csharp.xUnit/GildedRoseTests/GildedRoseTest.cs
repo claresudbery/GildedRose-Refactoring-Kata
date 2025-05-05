@@ -1,13 +1,9 @@
-using System;
 using Xunit;
 using System.Collections.Generic;
-using ApprovalTests.Combinations;
-using ApprovalTests.Reporters;
 using GildedRoseKata;
 
 namespace GildedRoseTests;
 
-[UseReporter(typeof(DiffReporter))]
 public class GildedRoseTest
 {
     [Fact]
