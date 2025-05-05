@@ -1,3 +1,5 @@
+_Support this and all Emily Bache's katas via [Patreon](https://www.patreon.com/EmilyBache)_
+
 # Gilded Rose Refactoring Kata
 
 ## Clare's Intro
@@ -51,62 +53,92 @@ At the time of writing, the following branches exist in this repo:
     - I think I created this when I was demoing code the first time I ran the O'Reilly Refactoring Fundamentals course
   - [`oreilly-refactoring-demo-v2`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/oreilly-refactoring-demo-v2)
     - Looks like I created this when I was demoing code the *second* time I ran the O'Reilly Refactoring Fundamentals course
+  - [`oreilly-demo1-start`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/oreilly-demo1-start)
+    - Created as part of the O'Reilly refactoring course - see notes in clare-tech - `refactoring-demo.md`
+    - This branch has a notes file with all the refactoring steps listed, at `csharpcore/GildedRose/demo-notes.txt`
   - [`if-parsing-exercise`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/if-parsing-exercise)
     - Created purely to play about with some equivalent boolean expressions for the sake of a little connect exercise
     - should be in a different repo really - only related to Gilded Rose because I created it for a "lift up conditional" learning hour which also used the Gilded Rose repo
+  - [`coverage-demo-start`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/coverage-demo-start)
+    - Created as part of my version of the Samman ["Using coverage to add tests to existing code" learning hour](https://www.sammancoaching.org/learning_hours/legacy/verify_xml_reports.html)
+    - My notes for this are in clare-tech - code-coverage-add-tests.md
+    - This branch gives a useful starting point for my code coverage demo
+    - This branch has the following changes to Emily's base code:
+      - All folders except `csharp.xUnit` have been removed, so people don't have to go hunting for the relevant code
+      - The `ApprovalTests` NuGet package has been included
+      - I've added demo notes at the bottom of `GildedRoseTest.cs`
+      - I've added a commented-out `ToString()` method to `Item.cs`
+      - I've formatted `GildedRose.cs` ever so slightly differently 
+        - one long line has been formatted across two lines
+        - but I've also removed an empty line elsewhere - this is deliberate... 
+        - ...so that when I refer to line numbers during the mutation demo, my line numbers will hopefully match other people's
+  - [`coverage-demo-complete`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/coverage-demo-complete)
+    - What the code looks like at the end of the coverage demo (see `coverage-demo-start` above)
+    - It's basically the same as `csharp-mutation-start` (see notes below)
+  - [`csharp-mutation-start`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/csharp-mutation-start)
+    - Created as part of my mutation testing learning hour
+    - My notes for this are in clare-tech - mutation-testing.md
+    - This branch gives a useful starting point for my mutation testing demo 
+      - it's basically in the same place as `coverage-demo-complete`, because this exercise takes up where that one left off
+    - The following changes have been made from Emily's base. It has the same changes as `coverage-demo-start` (see notes above), and...
+      - `ToString()` is no longer commented out in `Item.cs`
+      - `GildedRoseTest.cs` has new combination approvals test code, which represents 100% test coverage but doesn't contain edge cases that will be discovered during the mutation testing demo
+      - It has a new file - `GildedRoseTest.UpdateQuality.approved.txt` - which represents the approved test data from having added 100% test coverage in the code coverage learning hour
+  - [`csharp-mutation-complete`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/csharp-mutation-complete)
+    - What the code looks like at the end of the mutation demo (see `csharp-mutation-start` above)
+    - The only actual change between this and `csharp-mutation-start` is that there are some extra combinations in `GildedRoseTest.cs`, to handle the revealed edge cases
 
 ## Emily's Intro
 
-This Kata was originally created by Terry Hughes (http://twitter.com/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). See also [Bobby Johnson's description of the kata](https://iamnotmyself.com/refactor-this-the-gilded-rose-kata/).
-
-I translated the original C# into a few other languages, (with a little help from my friends!), and slightly changed the starting position. This means I've actually done a small amount of refactoring already compared with the original form of the kata, and made it easier to get going with writing tests by giving you one failing unit test to start with. I also added test fixtures for Text-Based approval testing with TextTest (see [the TextTests](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/texttests))
-
-As Bobby Johnson points out in his article ["Why Most Solutions to Gilded Rose Miss The Bigger Picture"](https://iamnotmyself.com/why-most-solutions-to-gilded-rose-miss-the-bigger-picture/), it'll actually give you
-better practice at handling a legacy code situation if you do this Kata in the original C#. However, I think this kata
-is also really useful for practicing writing good tests using different frameworks and approaches, and the small changes I've made help with that. I think it's also interesting to compare what the refactored code and tests look like in different programming languages.
+You can find out more about this exercise in my YouTube video [Why Developers LOVE The Gilded Rose Kata](https://youtu.be/Mt4XpGxigT4). I also have a video of a worked solution in Java - [Gilded Rose Kata, Hands-on](https://youtu.be/OdnV8hc9L7I)
 
 I use this kata as part of my work as a technical coach. I wrote a lot about the coaching method I use in this book [Technical Agile Coaching with the Samman method](https://leanpub.com/techagilecoach). A while back I wrote this article ["Writing Good Tests for the Gilded Rose Kata"](http://coding-is-like-cooking.info/2013/03/writing-good-tests-for-the-gilded-rose-kata/) about how you could use this kata in a [coding dojo](https://leanpub.com/codingdojohandbook).
 
+
 ## How to use this Kata
 
-The simplest way is to just clone the code and start hacking away improving the design. You'll want to look at the ["Gilded Rose Requirements"](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/GildedRoseRequirements.txt) which explains what the code is for. I strongly advise you that you'll also need some tests if you want to make sure you don't break the code while you refactor.
+The simplest way is to just clone the code and start hacking away improving the design. You'll want to look at the ["Gilded Rose Requirements"](https://github.com/emilybache/GildedRose-Refactoring-Kata/blob/main/GildedRoseRequirements.md) which explains what the code is for. I strongly advise you that you'll also need some tests if you want to make sure you don't break the code while you refactor.
 
 You could write some unit tests yourself, using the requirements to identify suitable test cases. I've provided a failing unit test in a popular test framework as a starting point for most languages.
 
-Alternatively, use the "Text-Based" tests provided in this repository. (Read more about that in the next section)
+Alternatively, use the Approval tests provided in this repository. (Read more about that in the section "Text-based Approval Testing").
 
-Whichever testing approach you choose, the idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice designing tests, taking small steps, running the tests often, and incrementally improving the design. 
+The idea of the exercise is to do some deliberate practice, and improve your skills at designing test cases and refactoring. The idea is not to re-write the code from scratch, but rather to practice taking small steps, running the tests often, and incrementally improving the design. 
 
 ### Gilded Rose Requirements in other languages 
 
-- [English](GildedRoseRequirements.txt)
+- [English](GildedRoseRequirements.md)
 - [Español](GildedRoseRequirements_es.md)
 - [Français](GildedRoseRequirements_fr.md)
+- [Italiano](GildedRoseRequirements_it.md)
 - [日本語](GildedRoseRequirements_jp.md)
 - [Português](GildedRoseRequirements_pt-BR.md)
-- [Русский](GildedRoseRequirements_ru.txt)
+- [Русский](GildedRoseRequirements_ru.md)
+- [Українська](GildedRoseRequirements_ua.md)
 - [ไทย](GildedRoseRequirements_th.md)
 - [中文](GildedRoseRequirements_zh.txt)
 - [한국어](GildedRoseRequirements_kr.md)
 - [German](GildedRoseRequirements_de.md)
+- [Euskara](GildedRoseRequirements_eu.md)
 
 ## Text-Based Approval Testing
 
-Most language versions of this code have a [TextTest](https://texttest.org) fixture for Approval testing. For information about this, see the [TextTests README](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/texttests)
+Most language versions of this code have a [TextTest](https://texttest.org) fixture for Approval testing. For information about this, see the [TextTests README](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/texttests)
 
 Note from Clare: You can also see my [clare-wiki section](https://clare-wiki.herokuapp.com/pages/think/code-princ/Refactoring#approval-testing) which has a few more notes on getting started.
 
-## Translating this code
+## History of the exercise
 
-More translations are most welcome! I'm very open for pull requests that translate the starting position into additional languages. 
+This Kata was originally created by Terry Hughes (http://twitter.com/TerryHughes). It is already on GitHub [here](https://github.com/NotMyself/GildedRose). Bobby Johnson described the kata in an article titled "Refactor This: The Gilded Rose Kata", but unfortunately it is no longer on the internet. I found it on the Wayback Machine [here](https://web.archive.org/web/20240525015111/https://iamnotmyself.com/refactor-this-the-gilded-rose-kata/).
 
-Please note a translation should ideally include:
+I translated the original C# into a few other languages, (with a little help from my friends!), and slightly changed the starting position. This means I've actually done a small amount of refactoring already compared with the original form of the kata, and made it easier to get going with writing tests by giving you one failing unit test to start with. I also added test fixtures for Text-Based approval testing with TextTest (see [the TextTests](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/main/texttests))
 
-- a translation of the production code for 'update_quality' and Item
-- one failing unit test complaining that "fixme" != "foo"
-- a TextTest fixture, ie a command-line program that runs update_quality on the sample data for the number of days specified.
+As Bobby Johnson points out in his article "Why Most Solutions to Gilded Rose Miss The Bigger Picture" (on the Wayback Machine [here](https://web.archive.org/web/20230530152324/https://iamnotmyself.com/why-most-solutions-to-gilded-rose-miss-the-bigger-picture/)), it'll actually give you
+better practice at handling a legacy code situation if you do this Kata in the original C#. However, I think this kata
+is also really useful for practicing writing good tests using different frameworks and approaches, and the small changes I've made help with that. I think it's also interesting to compare what the refactored code and tests look like in different programming languages.
 
-Please don't write too much code in the starting position or add too many unit tests. The idea with the one failing unit test is to tempt people to work out how to fix it, discover it wasn't that hard, and now they understand what this test is doing they realize they can improve it.  
+## Contributing
 
-If your programming language doesn't have an easy way to add a command-line interface, then the TextTest fixture is probably not necessary.
-
+Contributions are encouraged! You could add a translations of the specification
+in another language or a new starting point for your favorite programming
+language. Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for more details.
