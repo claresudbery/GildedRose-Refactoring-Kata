@@ -65,6 +65,7 @@ At the time of writing, the following branches exist in this repo:
     - This branch gives a useful starting point for my code coverage demo
     - This branch has the following changes to Emily's base code:
       - All folders except `csharp.xUnit` have been removed, so people don't have to go hunting for the relevant code
+      - I've removed `ApprovalTest.cs` and the associated *.verified.txt to avoid confusion, because it uses a different approvals framework which doesn't seem to allow for verifying combinations
       - The `ApprovalTests` NuGet package has been included
       - I've added demo notes at the bottom of `GildedRoseTest.cs`
       - I've added a commented-out `ToString()` method to `Item.cs`
