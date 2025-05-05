@@ -54,6 +54,18 @@ At the time of writing, the following branches exist in this repo:
   - [`if-parsing-exercise`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/if-parsing-exercise)
     - Created purely to play about with some equivalent boolean expressions for the sake of a little connect exercise
     - should be in a different repo really - only related to Gilded Rose because I created it for a "lift up conditional" learning hour which also used the Gilded Rose repo
+  - [`coverage-demo-start`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/coverage-demo-start)
+    - Created as part of my version of the Samman ["Using coverage to add tests to existing code" learning hour](https://www.sammancoaching.org/learning_hours/legacy/verify_xml_reports.html)
+    - My notes for this are in clare-tech - code-coverage-add-tests.md
+    - This branch gives a useful starting point for my code coverage demo
+  - [`coverage-demo-complete`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/coverage-demo-complete)
+    - What the code looks like at the end of the coverage demo (see `coverage-demo-start` above)
+  - [`csharp-mutation-start`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/csharp-mutation-start)
+    - Created as part of my mutation testing learning hour
+    - My notes for this are in clare-tech - mutation-testing.md
+    - This branch gives a useful starting point for my mutation testing demo
+  - [`csharp-mutation-complete`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/csharp-mutation-complete)
+    - What the code looks like at the end of the mutation demo (see `csharp-mutation-start` above)
 
 ## Emily's Intro
 
