@@ -2,41 +2,39 @@
 using Xunit;
 using System.Collections.Generic;
 using GildedRoseKata;
-using ApprovalTests;
 using ApprovalTests.Combinations;
 using ApprovalTests.Reporters;
 
-namespace GildedRoseTests
-{
-    [UseReporter(typeof(DiffReporter))]
-    public class GildedRoseTest
-    {
-        [Fact]
-        public void UpdateQuality()
-        {
-            CombinationApprovals.VerifyAllCombinations(
-                DoUpdateQuality,
-                new String[] { 
-                    "foo", 
-                    "Aged Brie", 
-                    "Backstage passes to a TAFKAL80ETC concert", 
-                    "Sulfuras, Hand of Ragnaros" },
-                // SellIn:
-                new int[] { -1, 0, 2, 6, 11 },
-                // Quality:
-                new int[] { 0, 1, 49, 50 });
-        }
+namespace GildedRoseTests;
 
-        private string DoUpdateQuality(
-            string name, int sellIn, int quality)
-        {
-            Item item = new Item { Name = name, SellIn = sellIn, Quality = quality };
-            IList<Item> Items = new List<Item> { item };
-            GildedRose app = new GildedRose(Items);
-            app.UpdateQuality();
-            var itemString = Items[0].ToString();
-            return itemString;
-        }
+[UseReporter(typeof(DiffReporter))]
+public class GildedRoseTest
+{
+    [Fact]
+    public void UpdateQuality()
+    {
+        CombinationApprovals.VerifyAllCombinations(
+            DoUpdateQuality,
+            new String[] { 
+                "foo", 
+                "Aged Brie", 
+                "Backstage passes to a TAFKAL80ETC concert", 
+                "Sulfuras, Hand of Ragnaros" },
+            // SellIn:
+            new int[] { -1, 0, 2, 6, 11 },
+            // Quality:
+            new int[] { 0, 1, 49, 50 });
+    }
+
+    private string DoUpdateQuality(
+        string name, int sellIn, int quality)
+    {
+        Item item = new Item { Name = name, SellIn = sellIn, Quality = quality };
+        IList<Item> Items = new List<Item> { item };
+        GildedRose app = new GildedRose(Items);
+        app.UpdateQuality();
+        var itemString = Items[0].ToString();
+        return itemString;
     }
 }
 
