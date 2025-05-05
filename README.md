@@ -51,6 +51,9 @@ At the time of writing, the following branches exist in this repo:
     - I think I created this when I was demoing code the first time I ran the O'Reilly Refactoring Fundamentals course
   - [`oreilly-refactoring-demo-v2`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/oreilly-refactoring-demo-v2)
     - Looks like I created this when I was demoing code the *second* time I ran the O'Reilly Refactoring Fundamentals course
+  - [`oreilly-demo1-start`]
+    - Created as part of the O'Reilly refactoring course - see notes in clare-tech - `refactoring-demo.md`
+    - This branch has a notes file with all the refactoring steps listed, at `csharpcore/GildedRose/demo-notes.txt`
   - [`if-parsing-exercise`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/if-parsing-exercise)
     - Created purely to play about with some equivalent boolean expressions for the sake of a little connect exercise
     - should be in a different repo really - only related to Gilded Rose because I created it for a "lift up conditional" learning hour which also used the Gilded Rose repo
