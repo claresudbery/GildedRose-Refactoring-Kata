@@ -62,6 +62,7 @@ At the time of writing, the following branches exist in this repo:
     - My notes for this are in clare-tech - code-coverage-add-tests.md
     - This branch gives a useful starting point for my code coverage demo
     - This branch has the following changes to Emily's base code:
+      - All folders except `csharp.xUnit` have been removed, so people don't have to go hunting for the relevant code
       - The `ApprovalTests` NuGet package has been included
       - I've added demo notes at the bottom of `GildedRoseTest.cs`
       - I've added a commented-out `ToString()` method to `Item.cs`
