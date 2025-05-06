@@ -12,10 +12,7 @@ public class GildedRoseTest
     [Fact]
     public void foo()
     {
-        string name = "foo";
-        int sellIn = 0;
-        int quality = 0;
-        var itemString = DoUpdateQuality(name, sellIn, quality);
+        var itemString = DoUpdateQuality("foo", 0, 0);
         Approvals.Verify(itemString);
     }
 
