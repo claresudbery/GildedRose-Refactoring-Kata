@@ -15,7 +15,8 @@ public class GildedRoseTest
         IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
         GildedRose app = new GildedRose(Items);
         app.UpdateQuality();
-        Approvals.Verify(Items[0].ToString());
+        string itemString = Items[0].ToString();
+        Approvals.Verify(itemString);
     }
 }
 
