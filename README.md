@@ -61,11 +61,11 @@ At the time of writing, the following branches exist in this repo:
     - should be in a different repo really - only related to Gilded Rose because I created it for a "lift up conditional" learning hour which also used the Gilded Rose repo
   - [`coverage-demo-start`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/coverage-demo-start)
     - Created as part of my version of the Samman ["Using coverage to add tests to existing code" learning hour](https://www.sammancoaching.org/learning_hours/legacy/verify_xml_reports.html)
-    - My notes for this are in clare-tech - code-coverage-add-tests.md
+    - My notes for this are in clare-tech - `code-coverage-add-tests.md`
     - This branch gives a useful starting point for my code coverage demo
     - This branch has the following changes to Emily's base code:
       - All folders except `csharp.xUnit` have been removed, so people don't have to go hunting for the relevant code
-      - I've removed `ApprovalTest.cs` and the associated *.verified.txt to avoid confusion, because it uses a different approvals framework which doesn't seem to allow for verifying combinations
+      - I've removed `ApprovalTest.cs` and the associated `*.verified.txt` to avoid confusion, because it uses a different approvals framework which doesn't seem to allow for verifying combinations
       - The `ApprovalTests` NuGet package has been included
       - I've added demo notes at the bottom of `GildedRoseTest.cs`
       - I've added a commented-out `ToString()` method to `Item.cs`
@@ -73,12 +73,18 @@ At the time of writing, the following branches exist in this repo:
         - one long line has been formatted across two lines
         - but I've also removed an empty line elsewhere - this is deliberate... 
         - ...so that when I refer to line numbers during the mutation demo, my line numbers will hopefully match other people's
+  - [`coverage-demo-wi-approvals`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/coverage-demo-wi-approvals)
+    - What the code looks like during the coverage demo, after basic Approvals have been added (see `coverage-demo-start` above)
+    - It's used to speed things up to give more time for exercises - see clare-tech - `coverage-demo-instructions.md` - for notes
+  - [`coverage-demo-wi-combinations`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/coverage-demo-wi-combinations)
+    - What the code looks like during the coverage demo, after combination approvals have been added (see `coverage-demo-start` above)
+    - It's used to speed things up to give more time for exercises - see clare-tech - `coverage-demo-instructions.md` - for notes
   - [`coverage-demo-complete`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/coverage-demo-complete)
     - What the code looks like at the end of the coverage demo (see `coverage-demo-start` above)
     - It's basically the same as `csharp-mutation-start` (see notes below)
   - [`csharp-mutation-start`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/csharp-mutation-start)
     - Created as part of my mutation testing learning hour
-    - My notes for this are in clare-tech - mutation-testing.md
+    - My notes for this are in clare-tech - `mutation-testing.md`
     - This branch gives a useful starting point for my mutation testing demo 
       - it's basically in the same place as `coverage-demo-complete`, because this exercise takes up where that one left off
     - The following changes have been made from Emily's base. It has the same changes as `coverage-demo-start` (see notes above), and...
