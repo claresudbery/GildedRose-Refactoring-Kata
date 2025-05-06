@@ -12,7 +12,10 @@ public class GildedRoseTest
     [Fact]
     public void foo()
     {
-        var item = new Item { Name = "foo", SellIn = 0, Quality = 0 };
+        string name = "foo";
+        int sellIn = 0;
+        int quality = 0;
+        var item = new Item { Name = name, SellIn = sellIn, Quality = quality };
         IList<Item> Items = new List<Item> { item };
         GildedRose app = new GildedRose(Items);
         app.UpdateQuality();
