@@ -41,6 +41,7 @@ public class GildedRoseTest
 /*
   NB: The final state of the code is shown at the bottom of these instructions. 
        Also the final state of this code is recorded in the coverage-demo-complete branch, and is the starting state of the csharp-mutation-start branch.
+  These instructions are available for Clare in a much-more-nicely-formatted way, in clare-tech, in coverage-demo-instructions.md
    INTRO
        Explain Gilded Rose
            Show the UpdateQuality method
