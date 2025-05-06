@@ -12,7 +12,8 @@ public class GildedRoseTest
     [Fact]
     public void foo()
     {
-        IList<Item> Items = new List<Item> { new Item { Name = "foo", SellIn = 0, Quality = 0 } };
+        var item = new Item { Name = "foo", SellIn = 0, Quality = 0 };
+        IList<Item> Items = new List<Item> { item };
         GildedRose app = new GildedRose(Items);
         app.UpdateQuality();
         string itemString = Items[0].ToString();
