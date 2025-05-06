@@ -5,6 +5,7 @@ using GildedRoseKata;
 
 namespace GildedRoseTests;
 
+[UseReporter(typeof(DiffReporter))]
 public class GildedRoseTest
 {
     [Fact]
