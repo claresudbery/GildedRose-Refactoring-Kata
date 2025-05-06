@@ -15,12 +15,18 @@ public class GildedRoseTest
         string name = "foo";
         int sellIn = 0;
         int quality = 0;
+        var itemString = DoUpdateQuality(name, sellIn, quality);
+        Approvals.Verify(itemString);
+    }
+
+    private string DoUpdateQuality(string name, int sellIn, int quality)
+    {
         var item = new Item { Name = name, SellIn = sellIn, Quality = quality };
         IList<Item> Items = new List<Item> { item };
         GildedRose app = new GildedRose(Items);
         app.UpdateQuality();
         string itemString = Items[0].ToString();
-        Approvals.Verify(itemString);
+        return itemString;
     }
 }
 
