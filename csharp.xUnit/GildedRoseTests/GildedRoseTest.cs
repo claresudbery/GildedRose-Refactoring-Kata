@@ -13,7 +13,13 @@ public class GildedRoseTest
     public void foo()
     {
         var itemString = DoUpdateQuality("foo", 0, 0);
-        Approvals.Verify(itemString);
+        CombinationApprovals.VerifyAllCombinations(
+            DoUpdateQuality,
+            new String[] { "foo" },
+            // SellIn:
+            new int[] { 0 },
+            // Quality:
+            new int[] { 0 });
     }
 
     private string DoUpdateQuality(string name, int sellIn, int quality)
