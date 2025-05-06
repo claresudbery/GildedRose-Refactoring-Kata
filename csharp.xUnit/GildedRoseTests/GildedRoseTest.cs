@@ -1,5 +1,6 @@
 using Xunit;
 using System.Collections.Generic;
+using ApprovalTests;
 using GildedRoseKata;
 
 namespace GildedRoseTests;
