@@ -40,6 +40,7 @@ public class GildedRoseTest
 
 /*
  See other branch (coverage-demo-start) for instructions on how to reach this starting point.
+ These instructions are available for Clare in a much-more-nicely-formatted way, in clare-tech, in coverage-and-mutation-testing.md 
  From here, do a demo of mutation testing:
     - YOU WANT THE TESTS TO FAIL - THIS IS GOOD - YOUR TESTS ARE WORKING
         - When they fail, do NOT accept the new approved file
