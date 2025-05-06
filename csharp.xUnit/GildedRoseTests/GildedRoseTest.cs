@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Xunit;
 using System.Collections.Generic;
 using GildedRoseKata;
