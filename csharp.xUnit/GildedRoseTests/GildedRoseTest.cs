@@ -35,7 +35,7 @@ public class GildedRoseTest
 }
 
 /*
-  This branch is for when you want the ApprovalTests package already up and running and in use. 
+  This branch is for when you want CombinationApprovals already up and running and in use. 
   NB: The final state of the code is shown at the bottom of these instructions. 
        Also the final state of this code is recorded in the coverage-demo-complete branch, and is the starting state of the csharp-mutation-start branch.
   These instructions are available for Clare in a much-more-nicely-formatted way, in clare-tech, in coverage-demo-instructions.md
