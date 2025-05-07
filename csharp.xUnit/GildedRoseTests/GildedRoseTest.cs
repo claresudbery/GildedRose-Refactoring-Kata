@@ -11,7 +11,7 @@ namespace GildedRoseTests;
 public class GildedRoseTest
 {
     [Fact]
-    public void foo()
+    public void UpdateQuality()
     {
         var itemString = DoUpdateQuality("foo", 0, 0);
         CombinationApprovals.VerifyAllCombinations(
