@@ -5,4 +5,7 @@ obj
 vendor
 .idea
 *.iml
-*.ncrunchsolution
+**/*.received.*
+venv
+**/DS_Store/*
+**/.DS_Store/*
