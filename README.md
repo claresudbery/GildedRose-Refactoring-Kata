@@ -36,9 +36,11 @@ At the time of writing, the following branches exist in this repo:
 - Branches created for workshops and demos:
   - [`csharp-liftup-start`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/csharp-liftup-start)
     - Starting point for participants in a "lift up conditional" workshop
+    - Same as main branch but only contains csharp.xUnit language folder, and all tests removed apart from `ThirtyDays`, which is enough to catch all errors while refactoring
     - See [Emily's demo video](https://www.youtube.com/watch?v=OJmg9aMxPDI)
   - [`csharp-liftup-demo`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/csharp-liftup-demo)
-    - Designed to contain demo commits for the lift up conditional technique 
+    - Designed to contain demo commits for the lift up conditional technique
+    - This branch represents what the code looks like when lift up conditional has been fully applied and the nested if has been turned into a switch statement
     - Based on the `csharp-liftup-start` branch
   - [`csharp-liftup-demo-nearly-done`](https://github.com/claresudbery/GildedRose-Refactoring-Kata/tree/csharp-liftup-demo)
     - Designed for a demo of the lift up conditional technique - allows me to fast forward to when the refactor is nearly finished
