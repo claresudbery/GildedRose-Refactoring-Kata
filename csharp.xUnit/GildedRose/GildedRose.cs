@@ -11,28 +11,44 @@ public class GildedRose
         this.Items = Items;
     }
 
-        public void UpdateQuality()
+    public void UpdateQuality()
+    {
+        for (var i = 0; i < Items.Count; i++)
         {
-            for (var i = 0; i < Items.Count; i++)
-            {
-                DoUpdateQuality(Items[i]);
-            }
+            DoUpdateQuality(Items[i]);
         }
+    }
 
-        private static void DoUpdateQuality(Item item)
+    private static void DoUpdateQuality(Item item)
+    {
+        switch (item.Name)
         {
-            switch (item.Name)
+            case "Aged Brie":
             {
-                case "Aged Brie":
+                if (item.Quality < 50)
+                {
+                    item.Quality = item.Quality + 1;
+                }
+
+                item.SellIn = item.SellIn - 1;
+
+                if (item.SellIn < 0)
                 {
                     if (item.Quality < 50)
                     {
                         item.Quality = item.Quality + 1;
                     }
+                }
 
-                    item.SellIn = item.SellIn - 1;
+                break;
+            }
+            case "Backstage passes to a TAFKAL80ETC concert":
+            {
+                if (item.Quality < 50)
+                {
+                    item.Quality = item.Quality + 1;
 
-                    if (item.SellIn < 0)
+                    if (item.SellIn < 11)
                     {
                         if (item.Quality < 50)
                         {
@@ -40,61 +56,45 @@ public class GildedRose
                         }
                     }
 
-                    break;
+                    if (item.SellIn < 6)
+                    {
+                        if (item.Quality < 50)
+                        {
+                            item.Quality = item.Quality + 1;
+                        }
+                    }
                 }
-                case "Backstage passes to a TAFKAL80ETC concert":
+
+                item.SellIn = item.SellIn - 1;
+
+                if (item.SellIn < 0)
                 {
-                    if (item.Quality < 50)
-                    {
-                        item.Quality = item.Quality + 1;
-
-                        if (item.SellIn < 11)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality = item.Quality + 1;
-                            }
-                        }
-
-                        if (item.SellIn < 6)
-                        {
-                            if (item.Quality < 50)
-                            {
-                                item.Quality = item.Quality + 1;
-                            }
-                        }
-                    }
-
-                    item.SellIn = item.SellIn - 1;
-
-                    if (item.SellIn < 0)
-                    {
-                        item.Quality = item.Quality - item.Quality;
-                    }
-
-                    break;
+                    item.Quality = item.Quality - item.Quality;
                 }
-                case "Sulfuras, Hand of Ragnaros":
-                    break;
-                default:
+
+                break;
+            }
+            case "Sulfuras, Hand of Ragnaros":
+                break;
+            default:
+            {
+                if (item.Quality > 0)
+                {
+                    item.Quality = item.Quality - 1;
+                }
+
+                item.SellIn = item.SellIn - 1;
+
+                if (item.SellIn < 0)
                 {
                     if (item.Quality > 0)
                     {
                         item.Quality = item.Quality - 1;
                     }
-
-                    item.SellIn = item.SellIn - 1;
-
-                    if (item.SellIn < 0)
-                    {
-                        if (item.Quality > 0)
-                        {
-                            item.Quality = item.Quality - 1;
-                        }
-                    }
-
-                    break;
                 }
+
+                break;
             }
         }
+    }
 }
